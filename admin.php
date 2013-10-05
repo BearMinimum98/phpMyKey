@@ -11,7 +11,7 @@
             include_once("config.php");
             if ($_GET["key"] == $cronKey) {
                 //show admin stuff
-                echo "$addKey <br /> $removeKey <br /> $runCron";
+                echo $adminContent;
             } else {
                 //DENIED
                 echo $adminAuthFail;

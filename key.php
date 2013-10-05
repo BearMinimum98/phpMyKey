@@ -21,7 +21,7 @@
                     }
                     
                     if ($canProceed) {
-    		    	    echo $content;
+    		    	    echo file_get_contents($content);
 				        $current = file_get_contents($checkFile);
 				        $current .= $keys[$i] . "\n";
 				        file_put_contents($checkFile, $current);

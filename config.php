@@ -1,7 +1,7 @@
 <?php    
     //basic config
     $directory = "/projects/phpmykey/";
-    $content = "a test of phpMyKey";
+    $content = "content.txt";
     $checkFile = "used.txt";
     $keysFile = "keys.txt";
     $cronKeyFile = "cronkey.txt";
@@ -25,6 +25,8 @@
     //TODO: display list of all keys
     $removeKey = "<p><h3>Remove key</h3><form action='removekey.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' />Remove key: <input type='text' name='remove' /><input type='submit' value='Remove' /></form></p>";
     $runCron = "<p><h3>Run cron</h3><form action='cron.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' /><input type='submit' value='Run cron' /></form></p>";
+	$changeCron = "<p><h3>Change cron key</h3><form action='changecron.php' method='post'><input type='hidden' name='key' value='" . $cronKey . "' /><input type='text' name='new' /><input type='submit' value='Change cron key' /></form>";
+	$adminContent = "<div style='width:50%;height:50%;left:0px;position:absolute;'><h2 style='text-align:center'>Key management</h2>$addKey <br /> $removeKey</div><div style='width:50%;height:50%;right:0px;position:absolute;'><h2 style='text-align:center'>Cron key management</h2>$changeCron <br /> $runCron</div><div style='width:50%;height:50%;left:0px;top:50%;position:absolute;'></div><div style='width:50%;height:50%;right:0px;top:50%;position:absolute;'></div>";
     
     //addkey.php strings
     $keyAddSuccess = "key added. <a href='javascript:history.back()'>back</a>";
