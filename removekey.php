@@ -5,6 +5,10 @@
 			if ($allKeys[$i] == $_GET["remove"]) {
 				unset($allKeys[$i]);
 				file_put_contents($keysFile, implode(",", $allKeys));
+		for ($i = 0; $i < count($keys); ++$i) {
+			if ($keys[$i] == $_GET["remove"]) {
+				unset($keys[$i]);
+				file_put_contents($keysFile, implode(",", $keys));
 				echo $keyRemoveSuccess;
 				exit;
 			}
