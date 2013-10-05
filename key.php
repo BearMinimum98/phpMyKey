@@ -10,16 +10,26 @@
 	<body>
 		<?php
             include_once "config.php";
-            foreach ($keys as $currentKey) {
-                if ($_POST["key"] == $currentKey and strlen($_POST["key"]) != 0 and strpos(file_get_contents($checkFile), $currentKey) === false) {
-    		    	echo $content;
-				    $current = file_get_contents($checkFile);
-				    $current .= $currentKey . "\n";
-				    file_put_contents($checkFile, $current);
-                    exit;
-			    } elseif ($_POST["key"] == $currentKey and strlen($_POST["key"]) != 0 and strpos(file_get_contents($checkFile), $currentKey) !== false) {
-                    echo $redeemedErrMsg;
-                    exit;
+            for ($i = 0; $i < count($keys);$i++) {
+                if ($_POST["key"] == $keys[$i] and strlen($_POST["key"]) != 0) {
+                    $used = explode("\n", file_get_contents($checkFile));
+                    $canProceed = true;
+                    for ($j = 0; $j < count($used); $j++) {
+                        if ($used[$j] == $_POST["key"]) {
+                            $canProceed = false;
+                        }
+                    }
+                    
+                    if ($canProceed) {
+    		    	    echo $content;
+				        $current = file_get_contents($checkFile);
+				        $current .= $keys[$i] . "\n";
+				        file_put_contents($checkFile, $current);
+                        exit;
+                    } else {
+                        echo $redeemedErrMsg;
+                        exit;
+                    }
 			    }
             }
 			echo $keyErrMsg;
