@@ -29,10 +29,14 @@
     //addkey.php strings
     $keyAddSuccess = "key added. <a href='javascript:history.back()'>back</a>";
     $keyAddFail = "invalid key length (or key already exists). <a href='javascript:history.back()'>back</a>";
-    $keyAddIncorrect = "incorrect cron key. <a href='javascript:history.back()'>back</a>";
+    $keyAddIncorrect = "incorrect cron key. Given: " . $_GET["key"] . " <a href='javascript:history.back()'>back</a>";
     
     //removekey.php strings
     $keyRemoveSuccess = "key removed. <a href='javascript:history.back()'>back</a>";
     $keyRemoveFail = "invalid key length (or key doesn't exist). <a href='javascript:history.back()'>back</a>";
-    $keyRemoveIncorrect = "incorrect cron key. <a href='javascript:history.back()'>back</a>";
+    $keyRemoveIncorrect = "incorrect cron key. Given: " . $_GET["key"] . " <a href='javascript:history.back()'>back</a>";
+	
+	//changecron.php strings
+	$cronChangeSuccess = "cron key changed. <a href='javascript:history.back()'>back</a>";
+	$cronChangeFail = "incorrect cron key. Given: " . $_POST["key"] . " <a href='javascript:history.back()'>back</a>";
 ?>
