@@ -21,9 +21,9 @@
     
     //admin panel html
     $adminAuthFail = "Incorrect master key given (master key is same as cron key). Given: " . $_GET["key"];
-    $addKey = "<p><h3>Add key</h3><form action='addkey.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' />Add key: <input type='text' name='add' /><input type='submit' /></form></p>";
+    $addKey = "<p><h3>Add key</h3><form action='addkey.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' />Add key: <input type='text' name='add' /><input type='submit' value='add' /></form></p>";
     //TODO: display list of all keys
-    $removeKey = "<p><h3>Remove key</h3><form action='removekey.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' />Remove key: <input type='text' name='remove' /><input type='submit' /></form></p>";
+    $removeKey = "<p><h3>Remove key</h3><form action='removekey.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' />Remove key: <input type='text' name='remove' /><input type='submit' value='Remove' /></form></p>";
     $runCron = "<p><h3>Run cron</h3><form action='cron.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' /><input type='submit' value='Run cron' /></form></p>";
     
     //addkey.php strings
