@@ -22,11 +22,11 @@
     //admin panel html
     $adminAuthFail = "Incorrect master key given (master key is same as cron key). Given: " . $_GET["key"];
     $addKey = "<p><h3>Add key</h3><form action='addkey.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' />Add key: <input type='text' name='add' /><input type='submit' value='add' /></form></p>";
-    //TODO: display list of all keys
+    $viewKeys = "<p><h3>View keys</h3><form action='viewkeys.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' /><input type='submit' value='View Keys' /></form></p>";
     $removeKey = "<p><h3>Remove key</h3><form action='removekey.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' />Remove key: <input type='text' name='remove' /><input type='submit' value='Remove' /></form></p>";
     $runCron = "<p><h3>Run cron</h3><form action='cron.php' method='get'><input type='hidden' name='key' value='" . $cronKey . "' /><input type='submit' value='Run cron' /></form></p>";
 	$changeCron = "<p><h3>Change cron key</h3><form action='changecron.php' method='post'><input type='hidden' name='key' value='" . $cronKey . "' /><input type='text' name='new' /><input type='submit' value='Change cron key' /></form>";
-	$adminContent = "<div style='width:50%;height:50%;left:0px;position:absolute;'><h2 style='text-align:center'>Key management</h2>$addKey <br /> $removeKey</div><div style='width:50%;height:50%;right:0px;position:absolute;'><h2 style='text-align:center'>Cron key management</h2>$changeCron <br /> $runCron</div><div style='width:50%;height:50%;left:0px;top:50%;position:absolute;'></div><div style='width:50%;height:50%;right:0px;top:50%;position:absolute;'></div>";
+	$adminContent = "<div style='left:0px;'><h2 style='text-align:center'>Key management</h2>$addKey <br /> $removeKey <br /> $viewKeys</div><div style='right:0px;'><h2 style='text-align:center'>Cron key management</h2>$changeCron <br /> $runCron</div><div style='left:0px;top:50%;'></div><div style='right:0px;top:50%;'></div>";
     
     //addkey.php strings
     $keyAddSuccess = "key added. <a href='javascript:history.back()'>back</a>";

@@ -5,6 +5,7 @@
 <!DOCTYPE html>
     <head>
         <title>phpMyKey admin page</title>
+		<link rel="stylesheet" type="text/css" href="css/admin.css" />
     </head>
     <body>
         <?php
