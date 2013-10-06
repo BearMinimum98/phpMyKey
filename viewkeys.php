@@ -6,7 +6,7 @@
 			if ($currentKey != "")
 				echo "<option value='$currentKey'>$currentKey</option>";
 		}
-		echo "</select><br />Total keys: " . (count($keys) - 1);
+		echo "</select><br />Total keys: " . count($keys);
 		//add addkey and removekey functionality here
 	} else {
 		echo $keyRemoveIncorrect;

@@ -11,7 +11,7 @@
 		<?php
 			include_once "config.php";
 			for ($i = 0; $i < count($keys);$i++) {
-				if ($_POST["key"] == $keys[$i][$keysColumn] and strlen($_POST["key"]) != 0) {
+				if ($_POST["key"] == $keys[$i] and strlen($_POST["key"]) != 0) {
 					$used = array();
 					$usedData = mysql_query("SELECT * FROM usedKeys");
 					if (mysql_error() != null) {

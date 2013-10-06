@@ -23,7 +23,7 @@
     $cronKey = file_get_contents($cronKeyFile);
     $keys = array();
     while ($aKey = mysql_fetch_assoc($receivedData)) {
-        $keys[] = $aKey;
+        $keys[] = $aKey[$keysColumn];
     }
     
     //key strings
