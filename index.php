@@ -1,6 +1,10 @@
 <?php
+	include_once "config.php";
     header("Cache-Control: no-cache, must-revalidate");
     header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+	if (mysql_query("DESCRIBE " . $dbPrefix . $keysTable) === false) {
+		header('Location: install.php');
+	}
 ?>
 <!DOCTYPE html>
 <html>

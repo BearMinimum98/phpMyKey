@@ -7,8 +7,9 @@
     $dbError = "Error: " . mysql_error();
     
     //basic config
-    $directory = "/projects/phpmykey/test/";
+    $directory = "/your_path_from_root_directory/";
     $content = "content.txt";
+	$dbPrefix = "phpMyKey_";
     $checkTable = "usedKeys";
     $checkColumn = "usedKeys";
     $keysTable = "myKeys";
