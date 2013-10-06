@@ -1,14 +1,30 @@
-<?php    
+<?php
+    //db config
+    $dbaddress = "";
+    $dbname = "";
+    $username = "";
+    $password = "";
+    $dbError = "Error: " . mysql_error();
+    
     //basic config
-    $directory = "/projects/phpmykey/";
+    $directory = "/projects/phpmykey/test/";
     $content = "content.txt";
-    $checkFile = "used.txt";
-    $keysFile = "keys.txt";
+    $checkTable = "usedKeys";
+    $checkColumn = "usedKeys";
+    $keysTable = "myKeys";
+    $keysColumn = "myKeys";
     $cronKeyFile = "cronkey.txt";
     
+    
+    mysql_connect($dbaddress, $username, $password);
+    mysql_select_db($dbname);
+    $receivedData = mysql_query("SELECT * FROM $keysTable");
     //the keys to the city
     $cronKey = file_get_contents($cronKeyFile);
-    $keys = explode(",", file_get_contents($keysFile));
+    $keys = array();
+    while ($aKey = mysql_fetch_assoc($receivedData)) {
+        $keys[] = $aKey;
+    }
     
     //key strings
     $redeemedErrMsg = "<script type='text/javascript'>alert('Key has been redeemed already.');window.location = 'http://$_SERVER[HTTP_HOST]" . $directory . "';</script>";

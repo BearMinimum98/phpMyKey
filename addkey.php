@@ -9,8 +9,12 @@
 		}
 		if ($canProceed) {
 			$keys[] = $_GET["add"];
-			file_put_contents($keysFile, implode(",", $keys));
-			echo $keyAddSuccess;
+			mysql_query("INSERT INTO $keysTable VALUES ('" . mysql_real_escape_string($_GET["add"]) . "')");
+            if (mysql_error() == null) {
+			    echo $keyAddSuccess;
+            } else {
+                echo $dbError;
+            }
 		} else {
 			echo $keyAddFail;
 		}
